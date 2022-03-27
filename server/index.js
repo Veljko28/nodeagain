@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 
 app.use(express.static("public"));
+app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 
 
@@ -16,5 +17,8 @@ app.get('/', (req,res) => {
 
 const postsRouter = require('./routes/posts');
 app.use('/posts', postsRouter);
+
+const usersRouter = require('./routes/users');
+app.use('/users', usersRouter);
 
 app.listen(3000, () => { console.log("Server listening on port 3000")})
