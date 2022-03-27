@@ -1,6 +1,6 @@
-const Pool = require('pq').Pool;
+const Pool = require('pg').Pool;
 const pool = new Pool({
-    user: 'Artisoft',
+    user: 'artisoft',
     host: 'localhost',
     database: 'userproj',
     password: process.env.POSTGRES_PASSWORD,
