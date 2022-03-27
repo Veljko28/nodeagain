@@ -36,6 +36,14 @@ router.post('/login', (req,res) => {
     })
 })
 
+router.delete('/remove', (req, res) => {
+    const {email} = req.body;
+    pool.query("DELETE FROM users WHERE email = $1", [email], (err,result) => {
+        if (err) throw err;
+        res.json(result.rows);
+    })
+})
+
 
 // create login, update, and delete user and test out with postman
 
