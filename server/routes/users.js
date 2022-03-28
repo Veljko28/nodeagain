@@ -45,8 +45,4 @@ router.delete('/remove', (req, res) => {
 })
 
 
-// create login, update, and delete user and test out with postman
-
-
-
 module.exports = router;
