@@ -4,6 +4,7 @@ const pool = require('../sources/queries');
 const yup = require('yup');
 const bycript = require('bcryptjs');
 const { formatYupError } = require('../sources/formatYupError');
+const CreateAccessToken = require('../sources/createAccessToken');
 
 const YupSchema = yup.object().shape({
     name: yup.string().min(5).max(256),
@@ -57,7 +58,15 @@ router.post('/login', (req,res) => {
             const user = result.rows[0];
             bycript.compare(password, user.password, (err, result) => {
                 if (err || !result) res.status(404).json(false);
-                else res.status(200).json(true);
+                else {
+                    res.cookie('jid',
+                    CreateAccessToken(user?.id,'7d', false), 
+                    {
+                        httpOnly: true
+                    });
+
+                res.status(200).json({accessToken: CreateAccessToken(user?.id, '15m')});
+                }
             })
         }
         else res.status(404).json(false);
