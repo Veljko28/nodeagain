@@ -50,6 +50,7 @@ router.post('/register', async (req,res) => {
 
 
 router.post('/login', (req,res) => {
+    // create yup validate schema for login
     const {email, password} = req.body;
     pool.query("SELECT * FROM users WHERE email = $1", [email], (err,result) => {
         if (err) throw err;
@@ -74,6 +75,7 @@ router.post('/login', (req,res) => {
 })
 
 router.delete('/remove/:id', (req, res) => {
+    //  this route should check if the user requesting has the same id as the request
     const id = req.params.id;
     pool.query("DELETE FROM users WHERE id = $1", [id], (err,result) => {
         if (err) throw err;
