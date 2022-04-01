@@ -12,6 +12,14 @@ import ListAltIcon from '@mui/icons-material/ListAlt';
 import PersonIcon from '@mui/icons-material/Person';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
+
+
+const Title = ({name} : {name: string}) => {
+  return (
+    <Typography variant="h6" style={{marginLeft: 5}}> {name}</Typography>
+  )
+}
+
 const Sidebar = () => {
   return (
     <List component="nav">
@@ -21,42 +29,42 @@ const Sidebar = () => {
 
        <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10, display: ''}}>
          <HomeIcon fontSize='medium'/> 
-          <Typography variant="h6" style={{marginLeft: 5}}> Home</Typography>
+          <Title name="Home"/>
       </ListItem>
 
       <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10}}>
          <TagIcon fontSize='medium'/> 
-          <Typography variant="h6" style={{marginLeft: 5}}> Explore</Typography>
+         <Title name="Explore"/>
       </ListItem>
 
       <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10}}>
          <NotificationsIcon fontSize='medium'/> 
-          <Typography variant="h6" style={{marginLeft: 5}}> Notifications</Typography>
+         <Title name="Notifications"/>
       </ListItem>
 
       <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10}}>
          <EmailIcon fontSize='medium'/> 
-          <Typography variant="h6" style={{marginLeft: 5}}> Messages</Typography>
+         <Title name="Messages"/>
       </ListItem>
 
       <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10}}>
          <BookmarkIcon fontSize='medium'/> 
-          <Typography variant="h6" style={{marginLeft: 5}}> Bookmarks</Typography>
+         <Title name="Bookmarks"/>
       </ListItem>
 
       <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10}}>
          <ListAltIcon fontSize='medium'/> 
-          <Typography variant="h6" style={{marginLeft: 5}}> Lists</Typography>
+         <Title name="Lists"/>
       </ListItem>
 
       <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10}}>
-         <PersonIcon fontSize='medium'/> 
-          <Typography variant="h6" style={{marginLeft: 5}}> Profile</Typography>
+         <PersonIcon fontSize='medium'/>
+         <Title name="Profile"/>
       </ListItem>
 
       <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10}}>
          <MoreHorizIcon fontSize='medium'/> 
-          <Typography variant="h6" style={{marginLeft: 5}}> More</Typography>
+         <Title name="More"/>
       </ListItem>
 
 
