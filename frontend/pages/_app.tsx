@@ -4,6 +4,8 @@ import store from '../redux/store';
 import Layout from '../component/General/Layout';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+import '../styles/HoverFx.css';
+
 const theme = createTheme({
   palette: {
     primary: {
