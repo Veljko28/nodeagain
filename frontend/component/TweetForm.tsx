@@ -6,7 +6,7 @@ const TweetForm = () => {
   return (
     <Grid container style={{margin: 10}}>
       <Grid item>
-        <Grid item container>
+        <Grid item container xs={12}>
 
           <Grid item xs={10}>
             <Typography variant='h6' style={{display: 'inline-block', marginLeft: 150}}>Home</Typography>
