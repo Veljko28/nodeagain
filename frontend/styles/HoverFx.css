@@ -1,0 +1,12 @@
+@keyframes fadeIn {
+  from {
+    background-color: #fff;
+  }
+  to {
+    background-color: #eee;
+  }
+}
+
+.hoverFx:hover {
+  animation: fadeIn 0.3s forwards;
+}
