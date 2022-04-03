@@ -1,4 +1,11 @@
-Create Sidebar
-Create Tweet Input
-Create Post Section
-Create Profile Page
+Sidebar ✅
+Router Sidebar ✅ 
+Tweet Input
+Post Section ✅
+Profile Page
+Modal for Tweet Input
+404 Page
+mapping posts ✅
+hover fx ✅
+
+
