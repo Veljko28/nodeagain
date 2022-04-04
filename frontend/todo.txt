@@ -2,7 +2,7 @@ Sidebar ✅
 Router Sidebar ✅ 
 Tweet Input
 Post Section ✅
-Profile Page
+Profile Page ✅
 Modal for Tweet Input
 404 Page
 mapping posts ✅
