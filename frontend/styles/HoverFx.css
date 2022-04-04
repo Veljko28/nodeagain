@@ -9,4 +9,5 @@
 
 .hoverFx:hover {
   animation: fadeIn 0.3s forwards;
+  corsor: pointer;
 }
