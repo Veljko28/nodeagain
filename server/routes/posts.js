@@ -1,9 +1,12 @@
-const express = require('express');
-const router = express.Router();
-const pool = require('../sources/queries');
+import {v4} from 'uuid';
+import express from 'express';
+import {pool} from '../sources/queries';
 
-router.get('/', (req,res) => {
-    pool.query("SELECT * FROM posts",(err,result) => {
+const router = express.Router();
+
+router.get('/like/:txt', (req,res) => {
+    const txt = req.params.id;
+    pool.query("SELECT * FROM posts WHERE text LIKE $1", [txt],(err,result) => {
         if (err) throw err;
         res.status(200).json(result.rows);
     })
@@ -30,9 +33,10 @@ router.route('/:id').get((req,res) => {
 }) 
 
 router.post('/create',(req, res) => {
-    const { title, text, made_by } = req.body;
-    pool.query("INSERT INTO posts(title,text,made_by) VALUES ($1,$2,$3)",
-     [title,text,made_by] ,(err,result) => {
+    const { text,userId,mediaPath,timeCreated } = req.body;
+    const id = v4();
+    pool.query("INSERT INTO posts(id,text,userId,mediaPath,timeCreated) VALUES ($1,$2,$3,$4,$5)",
+     [id,text,userId,mediaPath,timeCreated] ,(err,result) => {
         if (err) throw err;
         res.json(result.rowCount == 1);
     })
