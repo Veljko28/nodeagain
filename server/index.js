@@ -1,6 +1,6 @@
-require('dotenv').config()
-const express = require('express');
+import express from 'express';
 const app = express();
+require('dotenv').config()
 
 app.use(express.static("public"));
 app.use(express.json());
