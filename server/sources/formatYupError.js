@@ -1,4 +1,4 @@
-const formatYupError = (err) => {
+export const formatYupError = (err) => {
     const errors = [];
     err.inner.forEach(e => {
       errors.push({
@@ -9,5 +9,3 @@ const formatYupError = (err) => {
   
     return errors;
   };
-
-  module.exports = formatYupError;
