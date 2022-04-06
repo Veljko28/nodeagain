@@ -41,14 +41,14 @@ router.post('/register', async (req,res) => {
     catch(err) {
         res.status(400).json(formatYupError(err));
     }
-    const {name, email, at, password, confirm_password} = req.body;
+    const {username, email, at, password, confirm_password} = req.body;
     if (password != confirm_password){
         res.status(400).json(false);
         return;
     }
     const hashedPass = bycript.hashSync(password, 10);
     const id = v4();
-    pool.query("INSERT INTO users(id,name,at,password, email) VALUES ($1, $2, $3, $4, $5)", [id, name,at,hashedPass, email], (err,result) => {
+    pool.query("INSERT INTO users(id,username,at,password, email) VALUES ($1, $2, $3, $4, $5)", [id,username,at,hashedPass,email], (err,result) => {
         if (err) throw err;
         res.status(201).json(result.rows);
     })
