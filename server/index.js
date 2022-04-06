@@ -21,4 +21,7 @@ app.use('/posts', postsRouter);
 const usersRouter = require('./routes/users');
 app.use('/users', usersRouter);
 
-app.listen(3000, () => { console.log("Server listening on port 3000")})
+const actionsRouter = require('./routes/postActions');
+app.use('/actions', actionsRouter);
+
+app.listen(5000, () => { console.log("Server listening on port 5000")})
