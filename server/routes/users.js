@@ -89,5 +89,15 @@ router.delete('/remove/:id', (req, res) => {
     })
 })
 
+router.get('/search/:term', (req,res) => {
+    let term = req.params.term;
+    term = "%" + term + "%";
+    console.log(term);
+    pool.query("SELECT username,at FROM users WHERE username LIKE $1 or at LIKE $1", [term], (err,result) => {
+        if (err) throw err;
+        res.status(200).json(result.rows);
+    })
+});
+
 
 module.exports = router;
