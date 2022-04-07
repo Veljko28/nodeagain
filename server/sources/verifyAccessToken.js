@@ -1,3 +1,4 @@
+import jwt from 'jsonwebtoken';
 const config = process.env;
 
 export const verifyToken = (req, res, next) => {
