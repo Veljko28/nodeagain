@@ -1,8 +1,11 @@
 import {v4} from 'uuid';
 import express from 'express';
 import {pool} from '../sources/queries';
+import { verifyToken } from '../sources/verifyAccessToken';
+import expressJWt from 'express-jwt';
 
 const router = express.Router();
+const secret = process.env.SECRET;
 
 router.get('/like/:txt', (req,res) => {
     const txt = req.params.id;
@@ -32,7 +35,7 @@ router.route('/:id').get((req,res) => {
     })
 }) 
 
-router.post('/create',(req, res) => {
+router.post('/create', verifyToken, (req, res) => {
     const { text,userId,mediaPath,timeCreated } = req.body;
     const id = v4();
     pool.query("INSERT INTO tweets(id,text,userId,mediaPath,timeCreated) VALUES ($1,$2,$3,$4,$5)",
