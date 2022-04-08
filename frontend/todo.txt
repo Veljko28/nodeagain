@@ -8,4 +8,9 @@ Modal for Tweet Input
 mapping posts ✅
 hover fx ✅
 
+search twitter ✅ 
+trending tab ✅
+profile image ✅
+
+
 
