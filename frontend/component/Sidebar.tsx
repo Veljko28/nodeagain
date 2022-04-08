@@ -1,6 +1,7 @@
-import { Grid, Button, IconButton, Typography, List, ListItem } from '@mui/material'
+import { Button, IconButton, Typography, List, ListItem } from '@mui/material'
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link';
 import SvgLogo from '../public/logo.svg';
 
 import HomeIcon from '@mui/icons-material/Home';
@@ -22,7 +23,7 @@ const Title = ({name} : {name: string}) => {
 
 const Sidebar = () => {
   return (
-    <List component="nav">
+    <List component="nav" style={{position: 'fixed'}}>
       <IconButton onClick={() => {}} style={{margin: 10}} disableTouchRipple >
           <Image src={SvgLogo} width="30px" height="30px" />
       </IconButton>
@@ -67,10 +68,12 @@ const Sidebar = () => {
          <Title name="More"/>
       </ListItem>
 
+      <Link href="/profile">
+         <Button style={{backgroundColor: 'red', borderRadius: '500px', padding: 15, width: 250, marginLeft: 5}}>
+         <Typography variant="h6" style={{marginLeft: 5, color: 'white', fontSize: 15}}> Tweet</Typography>
+         </Button>
+      </Link>
 
-      <Button style={{backgroundColor: 'red', borderRadius: '500px', padding: 15, width: 250, marginLeft: 5}}>
-        <Typography variant="h6" style={{marginLeft: 5, color: 'white', fontSize: 15}}> Tweet</Typography>
-      </Button>
     </List>
   )
 }
