@@ -11,3 +11,16 @@
   animation: fadeIn 0.3s forwards;
   corsor: pointer;
 }
+
+.search {
+  backgroundColor: #eee;
+  width: 250px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.search:focus {
+  outline: none;
+}
