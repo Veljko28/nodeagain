@@ -1,9 +1,11 @@
 import React from 'react';
 import { Button, Grid, IconButton, Typography } from '@mui/material';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+import background from '../public/background.png';
 
 
 const ProfileHead = () => {
@@ -11,9 +13,11 @@ const ProfileHead = () => {
     <Grid container style={{border: '1px solid #eee', maxWidth: 600}}>
       <Grid container item xs={12} style={{padding: "10px 10px 0 10px"}}>
         <Grid item xs={1}>
-         <IconButton>
-          <ArrowBackIcon/>
-         </IconButton>
+          <Link href="/">
+            <IconButton>
+              <ArrowBackIcon/>
+            </IconButton>
+          </Link>
         </Grid>
         <Grid item xs={11}>
           <Typography variant="h6">Username</Typography>
@@ -21,21 +25,19 @@ const ProfileHead = () => {
         </Grid>
       </Grid>
 
-      <Grid container item xs={12} style={{marginTop: 5}}>
-        <Image src="/background.png" width="600px" height="225px" />
+
+      <Grid item xs={12} style={{marginTop: 5, backgroundImage: "url('/background.png')", height: 175, paddingLeft: 25}}>
+        <div style={{position: 'absolute', top: 175, border: '4px solid white', borderRadius: 100}}>
+
+              <Image src="/avatar.jpg" width="125px" height="125px" 
+              style={{borderRadius: 100, position: 'absolute'}} />
+        </div>
       </Grid>
 
-      <Grid container item xs={12} style={{marginTop: 5,padding: 10}}>
-        <Grid item xs={9}>
-          <Image src="/avatar.jpg" width="150px" height="150px" 
-          style={{borderRadius: 100, border: '2px solid white', position: 'absolute'}} />
-        </Grid>
-
-        <Grid item xs={3}>
-          <Button variant="outlined" style={{color: 'black', borderColor: '#999', borderRadius: 500}}>
-            Set up Profile
-          </Button>
-        </Grid>
+      <Grid item xs={12} style={{display: 'flex', justifyContent: 'flex-end', padding: 10}}>
+        <Button variant="outlined" style={{color: 'black', borderColor: '#999', borderRadius: 500}}>
+             Set up Profile
+        </Button>
       </Grid>
 
       <div style={{padding: 20}}>
@@ -46,8 +48,8 @@ const ProfileHead = () => {
           <Typography variant="subtitle1" style={{color: '#999'}}>@username</Typography>
         </Grid>
         <Grid container item xs={12}>
-          <CalendarMonthOutlinedIcon/>
-          <Typography variant="subtitle1" style={{color: '#999'}}>Joined April 2022</Typography>
+          <CalendarMonthOutlinedIcon style={{color: '#999'}}/>
+          <Typography variant="subtitle1" style={{color: '#999',marginLeft: 5}}>Joined April 2022</Typography>
         </Grid>
         <Grid container item xs={12}>
           <Typography variant="subtitle1" style={{color: '#999'}}>
