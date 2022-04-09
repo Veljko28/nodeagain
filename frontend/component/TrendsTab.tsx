@@ -50,10 +50,10 @@ const trends = [
 const TrendsTab = () => {
   return (
     <div style={{marginTop: 10, marginBottom: 10, backgroundColor: '#fafafa', width: 350, borderRadius: 20}}>
-      <Typography variant="h6" style={{padding: 10, fontWeight: '800'}}>Trends For You</Typography>
+      <Typography variant="h6" style={{padding: 15, fontWeight: '800'}}>Trends For You</Typography>
       {trends.map((x,idx) => <TrendDisplay key={idx} {...x} />)}
       <Typography color="primary" className="hoverFx" 
-      style={{padding: 10, borderEndEndRadius: 25, borderEndStartRadius: 25, cursor: 'pointer'}} >Show More</Typography>
+      style={{padding: 15, borderEndEndRadius: 25, borderEndStartRadius: 25, cursor: 'pointer'}} >Show more</Typography>
     </div>
   )
 }
