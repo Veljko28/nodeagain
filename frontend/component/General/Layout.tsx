@@ -10,7 +10,9 @@ const Layout = ({children} : any) => {
       <Grid xs={2} item/>
 
       <Grid xs={2} item>
-        <Sidebar/>
+        <div style={{position: 'fixed'}}>
+          <Sidebar/>
+        </div>
       </Grid>
 
       <Grid xs={4} item>
@@ -18,8 +20,10 @@ const Layout = ({children} : any) => {
       </Grid>
 
       <Grid xs={3} item>
-        <SearchBar/>
-        <TrendsTab/>
+        <div style={{position: 'fixed'}}>
+          <SearchBar/>
+          <TrendsTab/>
+        </div>
       </Grid>
     </Grid>
   )
