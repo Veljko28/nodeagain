@@ -23,79 +23,81 @@ const Title = ({name} : {name: string}) => {
 
 const Sidebar = () => {
   return (
-     <Grid container>
-    <List component="nav" style={{maxWidth: 200}}>
-       <Link href="/">
-         <IconButton onClick={() => {}} style={{marginLeft: 10}} disableTouchRipple >
-            <Image src={SvgLogo} width="30px" height="30px" />
-         </IconButton>
-       </Link>
+   <Grid container>
+      <Grid container item xs={12}>
+         <List component="nav" style={{maxWidth: 200}}>
+            <Link href="/">
+               <IconButton onClick={() => {}} style={{marginLeft: 10}} disableTouchRipple >
+                  <Image src={SvgLogo} width="30px" height="30px" />
+               </IconButton>
+            </Link>
 
-       <Link href="/">
-         <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10, display: ''}}>
-            <HomeIcon fontSize='medium'/> 
-            <Title name="Home"/>
-         </ListItem>
-       </Link>
+            <Link href="/">
+               <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10, display: ''}}>
+                  <HomeIcon fontSize='medium'/> 
+                  <Title name="Home"/>
+               </ListItem>
+            </Link>
 
-      <Link href="/explore">
-         <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10}}>
-            <TagIcon fontSize='medium'/> 
-            <Title name="Explore"/>
-         </ListItem>
-      </Link>
+            <Link href="/explore">
+               <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10}}>
+                  <TagIcon fontSize='medium'/> 
+                  <Title name="Explore"/>
+               </ListItem>
+            </Link>
 
-   <Link href="/notifications">
-      <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10}}>
-         <NotificationsIcon fontSize='medium'/> 
-         <Title name="Notifications"/>
-      </ListItem>
-   </Link>
+         <Link href="/notifications">
+            <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10}}>
+               <NotificationsIcon fontSize='medium'/> 
+               <Title name="Notifications"/>
+            </ListItem>
+         </Link>
 
-   <Link href="/messages">
-      <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10}}>
-         <EmailIcon fontSize='medium'/> 
-         <Title name="Messages"/>
-      </ListItem>
-   </Link>
+         <Link href="/messages">
+            <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10}}>
+               <EmailIcon fontSize='medium'/> 
+               <Title name="Messages"/>
+            </ListItem>
+         </Link>
 
-   <Link href="/bookmarks">
-      <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10}}>
-         <BookmarkIcon fontSize='medium'/> 
-         <Title name="Bookmarks"/>
-      </ListItem>
-   </Link>
+         <Link href="/bookmarks">
+            <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10}}>
+               <BookmarkIcon fontSize='medium'/> 
+               <Title name="Bookmarks"/>
+            </ListItem>
+         </Link>
 
-   <Link href="/lists">
-      <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10}}>
-         <ListAltIcon fontSize='medium'/> 
-         <Title name="Lists"/>
-      </ListItem>
-   </Link>
+         <Link href="/lists">
+            <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10}}>
+               <ListAltIcon fontSize='medium'/> 
+               <Title name="Lists"/>
+            </ListItem>
+         </Link>
 
-   <Link href="/profile">
-      <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10}}>
-         <PersonIcon fontSize='medium'/>
-         <Title name="Profile"/>
-      </ListItem>
-   </Link>
+         <Link href="/profile">
+            <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10}}>
+               <PersonIcon fontSize='medium'/>
+               <Title name="Profile"/>
+            </ListItem>
+         </Link>
 
-   <Link href="/more">
-      <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10}}>
-         <MoreHorizIcon fontSize='medium'/> 
-         <Title name="More"/>
-      </ListItem>
-   </Link>
+         <Link href="/more">
+            <ListItem button disableRipple onClick={() => {}} style={{borderRadius: '500px', color: 'black', margin: 10}}>
+               <MoreHorizIcon fontSize='medium'/> 
+               <Title name="More"/>
+            </ListItem>
+         </Link>
 
-      <Button disableTouchRipple style={{backgroundColor: 'red', borderRadius: '500px', padding: 15, width: 225, marginLeft: 5}}>
-        <Typography variant="h6" style={{marginLeft: 5, color: 'white', fontSize: 15}}> Tweet</Typography>
-      </Button>
-    </List>
+            <Button disableTouchRipple style={{backgroundColor: 'red', borderRadius: '500px', padding: 15, width: 225, marginLeft: 5}}>
+            <Typography variant="h6" style={{marginLeft: 5, color: 'white', fontSize: 15}}> Tweet</Typography>
+            </Button>
+         </List>
 
+   </Grid>
 
 
       <Grid container className="hoverFx" style={{borderRadius: '500px',padding: 10, 
-      cursor: "pointer", width: 225, marginLeft: 5, position: "absolute", bottom: '0', left: 325}}>
+      cursor: "pointer", width: 225, marginLeft: 5, marginTop: 250}}>
 
          <Grid item xs={4}>
             <Avatar alt="Avatar" className="hoverFx"
