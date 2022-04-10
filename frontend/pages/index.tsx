@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <Grid container>
        <TitleChange title="Home / Twitter" />
-       <TweetForm/>
+       <TweetForm modal={false}/>
        <TweetDisplayMap/>
     </Grid>
   )
