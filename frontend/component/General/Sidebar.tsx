@@ -12,6 +12,7 @@ import BookmarkIcon from '@mui/icons-material/Bookmark';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import PersonIcon from '@mui/icons-material/Person';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import TweetModal from '../TweetModal';
 
 
 
@@ -22,6 +23,10 @@ const Title = ({name} : {name: string}) => {
 }
 
 const Sidebar = () => {
+
+   const [open, setOpen] = React.useState(false);
+
+
   return (
    <Grid container>
       <Grid container item xs={12}>
@@ -88,8 +93,9 @@ const Sidebar = () => {
             </ListItem>
          </Link>
 
-            <Button disableTouchRipple style={{backgroundColor: 'red', borderRadius: '500px', padding: 15, width: 225, marginLeft: 5}}>
-            <Typography variant="h6" style={{marginLeft: 5, color: 'white', fontSize: 15}}> Tweet</Typography>
+            <Button disableTouchRipple style={{backgroundColor: 'red', borderRadius: '500px', padding: 15, width: 225, marginLeft: 5}}
+               onClick={() => setOpen(true)}>
+               <Typography variant="h6" style={{marginLeft: 5, color: 'white', fontSize: 15}}> Tweet</Typography>
             </Button>
          </List>
 
@@ -116,7 +122,8 @@ const Sidebar = () => {
             </IconButton>
          </Grid>
       </Grid>
-    
+
+      <TweetModal open={open} setOpen={() => setOpen(false)}/>
     </Grid>
   )
 }
