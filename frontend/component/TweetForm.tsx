@@ -9,26 +9,42 @@ import FormatAlignLeftIcon from '@mui/icons-material/FormatAlignLeft';
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
 import DateRangeIcon from '@mui/icons-material/DateRange';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import CloseIcon from '@mui/icons-material/Close';
+import PublicIcon from '@mui/icons-material/Public';
 
-const TweetForm = () => {
+const TweetForm = ({modal, setOpen } : {modal: boolean, setOpen?: () => any}) => {
   return (
     <Grid container  style={{maxWidth: 600, border: "1px solid #eee", padding: 15}}>
-      <Grid xs={11} item >
-        <Typography variant="h6" style={{fontWeight: 700}}>Home</Typography>
-      </Grid>
-      <Grid xs={1} item>
-          <IconButton>
-            <FlareIcon />
-          </IconButton>
-      </Grid>
-
+      {modal ? <>
+        <Grid xs={1} item>
+            <IconButton onClick={modal && setOpen != undefined ? () => setOpen() : () => {}}>
+              <CloseIcon />
+            </IconButton>
+        </Grid>
+        <Grid xs={11} item />
+      </> : 
+      <>
+        <Grid xs={11} item >
+          <Typography variant="h6" style={{fontWeight: 700}}>Home</Typography>
+        </Grid>
+        <Grid xs={1} item>
+            <IconButton>
+              <FlareIcon />
+            </IconButton>
+        </Grid>
+      </>
+      
+      }
       <Grid item xs={2}>
           <Avatar alt="Avatar" className="hoverFx"
-          sx={{ width: 55, height: 55, cursor: "pointer", display: "inline-block", marginTop: 1 }}
+          sx={{ width: 55, height: 55, cursor: "pointer", display: "inline-block", marginBottom: 5, marginTop: 1 }}
           src="https://i.pinimg.com/originals/d1/47/e9/d147e940041c8a9a6a4cdf8116271171.jpg" />
       </Grid>
-      <Grid item xs={10}>
-        <textarea style={{width: '100%', height: 25, border: 'none', outline: 'none', fontSize: 20, borderBottom: '1px solid #eee'}}>
+      <Grid item xs={10} style={{position: 'relative'}}>
+        <textarea 
+        rows={4} cols={50} placeholder='What is happening?'
+        style={{width: '100%', border: 'none', outline: 'none', fontSize: 20, borderBottom: '1px solid #eee', marginBottom: 10}}>
+
         </textarea>
       </Grid>
 
