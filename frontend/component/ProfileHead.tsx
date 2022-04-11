@@ -2,10 +2,10 @@ import React from 'react';
 import { Button, Grid, IconButton, Typography } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
+import Verified from '../public/verified.svg';
 
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
-import background from '../public/background.png';
 
 
 const ProfileHead = () => {
@@ -42,7 +42,10 @@ const ProfileHead = () => {
 
       <div style={{padding: 20}}>
         <Grid container item xs={12} style={{marginTop: 5}}>
-          <Typography variant="h5" style={{fontWeight: 'bold'}}>Username</Typography>
+          <Typography variant="h5" style={{fontWeight: 'bold'}}>
+            Username
+            <Image src={Verified} width="25px" height="25px" style={{paddingTop: 5}} />
+          </Typography>
         </Grid>
         <Grid container item xs={12}>
           <Typography variant="subtitle1" style={{color: '#999'}}>@username</Typography>
