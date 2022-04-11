@@ -3,9 +3,9 @@ import React from 'react'
 
 import SearchIcon from '@mui/icons-material/Search';
 
-const SearchBar = () => {
+const SearchBar = ({width} : {width: number}) => {
   return (
-    <Paper style={{width: 350, borderRadius: 25, backgroundColor: '#fafafa', padding: 2}}>
+    <Paper style={{width: width, borderRadius: 25, backgroundColor: '#fafafa', padding: 2}}>
       <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">
         <SearchIcon />
       </IconButton>
