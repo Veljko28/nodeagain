@@ -1,5 +1,6 @@
 import { Grid } from '@mui/material'
 import React from 'react'
+import MightLike from '../MightLike'
 import SearchBar from '../SearchBar'
 import TrendsTab from '../TrendsTab'
 import Sidebar from './Sidebar'
@@ -21,7 +22,8 @@ const Layout = ({children} : any) => {
 
       <Grid xs={3} item>
         <div style={{position: 'fixed'}}>
-          <SearchBar/>
+          <SearchBar width={350} />
+          <MightLike/>
           <TrendsTab/>
         </div>
       </Grid>
