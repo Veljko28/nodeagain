@@ -101,27 +101,28 @@ const Sidebar = () => {
 
    </Grid>
 
+      <Link href="/username">
+         <Grid container className="hoverFx" style={{borderRadius: '500px',padding: 10, 
+         cursor: "pointer", width: 225, marginLeft: 5, marginTop: 250}}>
 
-      <Grid container className="hoverFx" style={{borderRadius: '500px',padding: 10, 
-      cursor: "pointer", width: 225, marginLeft: 5, marginTop: 250}}>
-
-         <Grid item xs={4}>
-            <Avatar alt="Avatar" className="hoverFx"
-            sx={{ width: 50, height: 50, cursor: "pointer", display: "inline-block", margin: 1 }}
-            src="https://i.pinimg.com/originals/d1/47/e9/d147e940041c8a9a6a4cdf8116271171.jpg" />
+            <Grid item xs={4}>
+               <Avatar alt="Avatar" className="hoverFx"
+               sx={{ width: 50, height: 50, cursor: "pointer", display: "inline-block", margin: 1 }}
+               src="https://i.pinimg.com/originals/d1/47/e9/d147e940041c8a9a6a4cdf8116271171.jpg" />
+            </Grid>
+            <Grid item xs={6} style={{marginTop: 15}}>
+               <div>
+                  <div style={{fontWeight:'bold', cursor: 'pointer'}}>Username</div>
+                  <span style={{cursor: "pointer"}}> @username</span>
+               </div>
+            </Grid>
+            <Grid item xs={2} style={{marginTop: 15}}>
+               <IconButton color="primary">
+                  <MoreHorizIcon />
+               </IconButton>
+            </Grid>
          </Grid>
-         <Grid item xs={6} style={{marginTop: 15}}>
-            <div>
-               <div style={{fontWeight:'bold', cursor: 'pointer'}}>Username</div>
-               <span style={{cursor: "pointer"}}> @username</span>
-            </div>
-         </Grid>
-         <Grid item xs={2} style={{marginTop: 15}}>
-            <IconButton color="primary">
-               <MoreHorizIcon />
-            </IconButton>
-         </Grid>
-      </Grid>
+      </Link>
 
       <TweetModal open={open} setOpen={() => setOpen(false)}/>
     </Grid>
