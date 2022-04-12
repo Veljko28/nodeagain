@@ -4,10 +4,12 @@ import SearchBar from '../component/SearchBar'
 
 import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
 import { Grid, IconButton } from '@mui/material';
+import TitleChange from '../component/TitleChange';
 
 const explore = () => {
   return (
     <div style={{maxWidth: 600, border: '1px solid #ccc', marginTop: 0}}> 
+    <TitleChange title="Explore"/>
     <Grid container>
         <Grid item xs={11}>
           <SearchBar width={500} />
