@@ -25,7 +25,7 @@ const customPosts = [
 export const TweetDisplayMap = ({posts} : {posts?: PostInterface[]}) => {
   // map array of posts to array of TweetDisplay components
   const tweetDisplay = customPosts.map((post, index) => {
-    return <TweetDisplay key={index} {...post} />
+    return <TweetDisplay key={index} post={post} />
   })
 
   return (
