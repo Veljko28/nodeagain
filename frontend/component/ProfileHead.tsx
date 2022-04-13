@@ -6,9 +6,10 @@ import Verified from '../public/verified.svg';
 
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+import { User } from '../models/User';
 
 
-const ProfileHead = () => {
+const ProfileHead = ({user} : {user: User}) => {
   return (
     <Grid container style={{border: '1px solid #eee', maxWidth: 600}}>
       <Grid container item xs={12} style={{padding: "10px 10px 0 10px"}}>
@@ -20,7 +21,7 @@ const ProfileHead = () => {
           </Link>
         </Grid>
         <Grid item xs={11}>
-          <Typography variant="h6">Username</Typography>
+          <Typography variant="h6">{user.username}</Typography>
           <div style={{fontSize: 12}}>2 Tweets</div>
         </Grid>
       </Grid>
@@ -43,12 +44,12 @@ const ProfileHead = () => {
       <div style={{padding: 20}}>
         <Grid container item xs={12} style={{marginTop: 5}}>
           <Typography variant="h5" style={{fontWeight: 'bold'}}>
-            Username
+            {user.username}
             <Image src={Verified} width="25px" height="25px" style={{paddingTop: 5}} />
           </Typography>
         </Grid>
         <Grid container item xs={12}>
-          <Typography variant="subtitle1" style={{color: '#999'}}>@username</Typography>
+          <Typography variant="subtitle1" style={{color: '#999'}}>@{user.at}</Typography>
         </Grid>
         <Grid container item xs={12}>
           <CalendarMonthOutlinedIcon style={{color: '#999'}}/>
