@@ -8,11 +8,17 @@ const ProfilePage = () => {
 
   const router = useRouter()
   const id = router.query['id'];
+
+  const user =  {
+    username: id as string,
+    at : id as string,
+    image: ""
+  }
   
   return (
     <>
       <TitleChange title={id as string}/>
-      <ProfileHead/>
+      <ProfileHead user={user} />
       <TweetDisplayMap/>
     </>
   )
