@@ -1,11 +1,13 @@
 import { Avatar, Button, Grid, Typography } from '@mui/material'
 import React from 'react'
+import Link from 'next/link'
 
 
 
 const UserMap = ({username, at} : {username: string, at: string}) => {
 
   return (
+  <Link href={`${username}`}>
     <Grid container style={{padding: 5}} className="hoverFx">
        <Grid item xs={2}>
             <Avatar alt="Avatar" className="hoverFx"
@@ -24,11 +26,12 @@ const UserMap = ({username, at} : {username: string, at: string}) => {
               </Button>
          </Grid>
       </Grid>
+   </Link>
   )
 }
 
 const MightLike = () => {
-
+  
   const a = [
     {
     username: 'Username1',
@@ -47,7 +50,7 @@ const MightLike = () => {
   return (
     <div style={{marginTop: 10, marginBottom: 10, backgroundColor: '#fafafa', width: 350, borderRadius: 20}}>
       <Typography variant="h6" style={{padding: 15, fontWeight: '800'}}>You might like</Typography>
-      {a.map(x => <UserMap {...x}/>)}
+      {a.map((x,idx) => <UserMap key={idx} {...x}/>)}
       <Typography color="primary" className="hoverFx" 
       style={{padding: 15, borderEndEndRadius: 25, borderEndStartRadius: 25, cursor: 'pointer'}} >Show more</Typography>
     </div>
