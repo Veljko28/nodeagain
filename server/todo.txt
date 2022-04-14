@@ -5,5 +5,8 @@ Ajust the routes to twitter Database ✅
 
 adding authentication to post routes and actions ✅
 user search ✅
-
+block retweet of own post
+favourite a post ✅
+retweet a post ✅
+comment on  a post
 
