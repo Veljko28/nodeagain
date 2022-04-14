@@ -5,6 +5,7 @@ import bycript from "bcryptjs";
 import {pool} from '../sources/queries';
 import {formatYupError} from '../sources/formatYupError';
 import {CreateAccessToken} from '../sources/createAccessToken'; 
+import { verifyToken } from '../sources/verifyAccessToken';
 
 
 
@@ -80,7 +81,7 @@ router.post('/login', (req,res) => {
     })
 })
 
-router.delete('/remove/:id', (req, res) => {
+router.delete('/remove/:id', verifyToken, (req, res) => {
     //  this route should check if the user requesting has the same id as the request
     const id = req.params.id;
     pool.query("DELETE FROM users WHERE id = $1", [id], (err,result) => {
