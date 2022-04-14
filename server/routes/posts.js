@@ -2,7 +2,6 @@ import {v4} from 'uuid';
 import express from 'express';
 import {pool} from '../sources/queries';
 import { verifyToken } from '../sources/verifyAccessToken';
-import expressJWt from 'express-jwt';
 
 const router = express.Router();
 const secret = process.env.SECRET;
@@ -27,7 +26,7 @@ router.route('/:id').get((req,res) => {
         if (!result.rowCount) res.status(404).json(false);
         else res.json(result.rows[0]);
     })
-}).delete((req, res ) => {
+}).delete(verifyToken, (req, res ) => {
     const id = req.params.id;
     pool.query("DELETE FROM tweets WHERE id = $1", [id] ,(err,result) => {
         if (err) throw err;
