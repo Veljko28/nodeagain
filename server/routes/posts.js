@@ -4,7 +4,6 @@ import {pool} from '../sources/queries';
 import { verifyToken } from '../sources/verifyAccessToken';
 
 const router = express.Router();
-const secret = process.env.SECRET;
 
 router.get('/like/:txt', (req,res) => {
     const txt = req.params.id;
@@ -13,11 +12,6 @@ router.get('/like/:txt', (req,res) => {
         res.status(200).json(result.rows);
     })
 })
-
-// router.get('/:id', (req,res) => {
-//     const id = req.params.id;
-//     res.send(`Post #${id}`);
-// })
 
 router.route('/:id').get((req,res) => {
     const id = req.params.id;
